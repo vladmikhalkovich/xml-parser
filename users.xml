@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<users>
+    <user>
+        <id>1</id>
+        <firstName>Mikhail</firstName>
+        <lastName>Tal</lastName>
+    </user>
+    <user>
+        <id>2</id>
+        <firstName>Harry</firstName>
+        <lastName>Kasparov</lastName>
+    </user>
+    <user>
+        <id>3</id>
+        <firstName>Anatoliy</firstName>
+        <lastName>Karpov</lastName>
+    </user>
+</users>

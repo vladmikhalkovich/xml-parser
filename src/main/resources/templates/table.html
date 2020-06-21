@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Table</title>
+</head>
+<body>
+
+<div>
+    <table border="1">
+        <tr>
+            <th><form method="POST" th:action="@{/sortByFirstName}">
+                <button type="submit">First Name</button>
+            </form></th>
+            <th><form method="POST" th:action="@{/sortByLastName}">
+                <button type="submit">Last Name</button>
+            </form></th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each ="user : ${usersList}">
+            <td th:utext="${user.firstName}">...</td>
+            <td th:utext="${user.lastName}">...</td>
+            <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+        </tr>
+    </table>
+</div>
+<form method="GET" th:action="@{/add_user}">
+    <button type="submit">Add</button>
+</form>
+<form method="POST" th:action="@{/overwrite}">
+    <button type="submit">Save</button>
+</form>
+
+</body>
+
+</html>
