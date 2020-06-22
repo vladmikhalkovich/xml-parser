@@ -66,7 +66,7 @@ public class MainController {
         return "redirect:/users_list";
     }
 
-    @PostMapping("/overwrite")
+    @GetMapping("/overwrite")
     public String overwriteFile() {
         Users users = new Users();
         users.setUsers(usersContainer.getUserList());
@@ -74,19 +74,19 @@ public class MainController {
         return "redirect:/users_list";
     }
 
-    @GetMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") int id) {
         usersContainer.getUserList().removeIf(user -> user.getId() == id);
         return "redirect:/users_list";
     }
 
-    @PostMapping("/sortByFirstName")
+    @GetMapping("/sortByFirstName")
     public String sortByFirstName() {
         usersContainer.getUserList().sort(Comparator.comparing(User::getFirstName));
         return "redirect:/users_list";
     }
 
-    @PostMapping("/sortByLastName")
+    @GetMapping("/sortByLastName")
     public String sortByLastName() {
         usersContainer.getUserList().sort(Comparator.comparing(User::getLastName));
         return "redirect:/users_list";
